@@ -3,6 +3,7 @@
 import Image from "next/image";
 import arrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
+import { ArrowUpRight } from "lucide-react";
 
 export const ContactSection = () => {
   return (
@@ -29,11 +30,7 @@ export const ContactSection = () => {
             <div className="">
               <button className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900">
                 <span className="font-semibold">Contact Me</span>
-                <Image
-                  src={arrowUpRightIcon}
-                  alt="arrown right icon"
-                  className="size-4 text-white"
-                />
+                <ArrowUpRight className="size-4"/>
               </button>
             </div>
           </div>

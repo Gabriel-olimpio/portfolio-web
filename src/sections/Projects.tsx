@@ -4,9 +4,6 @@ import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Image from "next/image";
-import checkIcon from "@/assets/icons/check-circle.svg";
-import arrowUp from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { ArrowUpRight, CircleCheck } from "lucide-react";
@@ -52,8 +49,8 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
-      <div id="projects" className="container">
+    <section id="projects" className="pb-16 lg:py-24">
+      <div  className="container">
         <SectionHeader
           eyebrow="Real-world Results"
           title="Featured Projects"
@@ -61,10 +58,13 @@ export const ProjectsSection = () => {
         />
 
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project) => (
+          {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20">
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
+              style={{
+                top: `calc(64px + ${projectIndex * 40}px`,
+              }}>
               
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
